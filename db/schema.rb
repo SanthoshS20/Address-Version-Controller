@@ -14,8 +14,10 @@ ActiveRecord::Schema.define(version: 2018_05_14_164801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
+  
+  #my table name "addresses" and primary key "address_id"
   create_table "addresses", primary_key: "address_id", id: :serial, force: :cascade do |t|
+    #The below variable has been used for my addresses table
     t.text "address"
     t.string "company"
     t.integer "current_version_id"
@@ -23,12 +25,15 @@ ActiveRecord::Schema.define(version: 2018_05_14_164801) do
     t.datetime "updated_at"
   end
 
+  #my table name "versions"
   create_table "versions", id: :serial, force: :cascade do |t|
+    #The below variable has been used for my versions table
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "address_id"
     t.string "ver_address"
   end
 
+  #foreign key has been used "address_id in versions" references primary key in the addresses table
   add_foreign_key "versions", "addresses", primary_key: "address_id", name: "versions_address_id_fkey"
 end
