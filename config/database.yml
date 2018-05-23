@@ -1,3 +1,4 @@
+#It contains the information about the db user, db password, db name, root, adapter
 development: 
   adapter: postgresql
   database: company_development
