@@ -1,20 +1,25 @@
 class AddressController < ApplicationController
+	#callbacks used here to verify authentication
 	skip_before_action :verify_authenticity_token
 	def index
-		# Parse the input
+		# all the addresses table values to passed to the instance variable
 		@addresses = Address.all
-		# Get data from input
+		# creating the procedure to show the output process in which sequence way
 		response = @addresses.map{|address| {id: address.address_id, company: address.company, address: address.address, current_version: address.current_version_id, created_at: address.created_at, updated_at: address.updated_at} }
 
 		# Present the output in some format
+		# output in the json format using respond_to
 		respond_to do |format|
 			format.json  { render :json => response } # don't do msg.to_json
 		end
 	end
-
+	
 	def show
+		# getting the id value from postman 
 		@add = params[:id]
+		# passing the particular tuple values to the instance variable @addres
 		@addres = Address.find(@add)
+		# producing the output as json in the postman
 		respond_to do |format|
 			format.json {render :json => @addres}
 		end
@@ -40,12 +45,14 @@ class AddressController < ApplicationController
 	end
 
 	def destroy
+		# to destroy a particular id
 		@add = params[:id]
 		Address.find(@add).destroy
 		#redirect_to :action =>'index'
 	end
 
 	def update
+		# to update a particular id 
 	 		@add = params[:id] 
 			@addres = Address.find(@add) 
 		if @addres.update_attributes(address_params)
@@ -59,7 +66,7 @@ class AddressController < ApplicationController
 	end
 	
 
-
+	# parameters has been used
 	def address_params
       params.permit(:company, :address, :created_at, :updated_at)
 	end
