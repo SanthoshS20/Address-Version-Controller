@@ -68,7 +68,7 @@ class AddressController < ApplicationController
 
 	# parameters has been used
 	def address_params
-      params.permit(:company, :address, :created_at, :updated_at)
+      params.permit(:company, :address)
 	end
 
 
