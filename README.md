@@ -1,24 +1,15 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Input and Output is in JSON Format
 
-Things you may want to cover:
+Created a rails project for managing the address version
 
-* Ruby version
+Address version is nothing but when ever there is a client wants to change the address. If is changed the address the previous address is moved to the version table.
 
-* System dependencies
+The reason why we are adding the previous address in the version table because when the client necessary wants the previous address. It is easy to change the current from the version table.
 
-* Configuration
+Controller : address, version
+Model : address,version
+DB Table : addresses, versions
 
-* Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
