@@ -1,0 +1,24 @@
+development: 
+  adapter: postgresql
+  database: company_development
+  encoding: unicode
+  password: "123SANsun"
+  pool: "<%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>"
+  username: santhosh1
+  root: localhost
+production: 
+  adapter: postgresql
+  database: company_production
+  encoding: unicode
+  password: "123SANsun"
+  pool: "<%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>"
+  username: santhosh1
+  root: localhost
+test: 
+  adapter: postgresql
+  database: company_test
+  encoding: unicode
+  password: "123SANsun"
+  pool: "<%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>"
+  username: santhosh1
+  root: localhost
