@@ -9,7 +9,7 @@ class Address < ApplicationRecord
 	end
 	
 	#before updating the database "addresses" i am adding the previous data in the versions table
-	before_update :add_data, on: [:update]
+	before_update :add_data, on: [:update, :rollback]
 	private 
 		def add_data
 			#creating new versions tuple with empty values
