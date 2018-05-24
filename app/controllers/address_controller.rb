@@ -31,8 +31,6 @@ class AddressController < ApplicationController
 
 	def create
 		@add1 = Address.new(address_params)
-		@add1.created_at = Time.now()
-		@add1.updated_at = "null"
 		if @add1.save
 			puts "ID = #{@add1.address_id}"
 			# Return HTTP 200 along with object primary key
@@ -64,6 +62,18 @@ class AddressController < ApplicationController
 		end
 		respond_to do |format|
 			format.json {render :json => @addres}
+		end
+	end
+	
+	def rollback
+		@ver1=Version.find(params[:id])
+		@id = @ver1.address_id
+		@addresses = Address.all
+		@addresses.each do |i|
+			if i.id==@id
+				i.address=@ver1.ver_address
+				i.save
+			end
 		end
 	end
 	
