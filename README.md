@@ -18,9 +18,10 @@ DB Table : addresses, versions
 
 HOW TO RUN THIS APPLICATION IN YOUR LOCAL :
 1.Clone it first.
-2.Create a database in the postgres with the database name that i mentioned in the "database.yml" file that is located in the config folder.
-3.Create a role in postgres that i mentioned in the same file "database.yml".
-4.run rails server.
-5.Using postman perform different http request and response.
+2.go to that path.
+3.Create a database in the postgres with the database name that i mentioned in the "database.yml" file that is located in the config folder.
+4.Create a role in postgres that i mentioned in the same file "database.yml".
+5.run rails server.
+6.Using postman perform different http request and response.
 
 
