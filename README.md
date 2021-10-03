@@ -15,6 +15,7 @@ DB Table : addresses, versions
 
 
 **HOW TO RUN THIS APPLICATION IN YOUR LOCAL :**
+
 1.Clone it first.
 
 2.go to that path.
